@@ -589,7 +589,7 @@ class RustGenerator : public BaseGenerator {
     code_ += "#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]";
     code_ += "pub enum " + Name(enum_def) + " {";
 
-    int64_t anyv = 0;
+    [[maybe_unused]] int64_t anyv = 0;
     const EnumVal *minv = nullptr, *maxv = nullptr;
     for (auto it = enum_def.Vals().begin(); it != enum_def.Vals().end(); ++it) {
       const auto &ev = **it;
